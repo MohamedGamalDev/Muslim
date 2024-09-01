@@ -1,6 +1,18 @@
+buildscript {
+    ext.kotlin_version = '1.7.10' // استخدم الإصدار المناسب هنا
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // يمكنك إضافة أي تبعيات أخرى هنا
+    }
+}
+
 plugins {
     id "com.android.application"
-    id "kotlin-android"
+    id "org.jetbrains.kotlin.android" // إزالة تحديد النسخة هنا
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
 }

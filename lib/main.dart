@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test1907/Tabs/Quran/sura_details_sceen.dart';
+import 'package:test1907/app_theme.dart';
 import 'Home page.dart';
 void main() {
   runApp(MyApp());
@@ -10,8 +12,12 @@ class MyApp extends StatelessWidget {
 debugShowCheckedModeBanner: false,
       routes:
       {
-        HomePage.route:(context) => HomePage()
+        HomePage.route:(context) => HomePage(),
+        SuraDetailsScreen.route:(context)=>SuraDetailsScreen(),
       },
+      theme:AppTheme.lightTheme,
+      themeMode: ThemeMode.light,
+      darkTheme: AppTheme.darkTheme,
     );
   }
 }
