@@ -331,7 +331,7 @@ class QuranTab extends StatelessWidget {
                       child: Center(
                         child: InkWell(
                           onTap:()=>Navigator.of(context).pushNamed(SuraDetailsScreen.route
-                              ,arguments:SuraDetails(currintIndex: index+1, curruntName:quranNames[index] ) ),
+                              ,arguments:SuraDetails(currintIndex: index, curruntName:quranNames[index] ) ),
                           child: Text(
                             quranNames[index],
                             style: Theme.of(context).textTheme.headlineSmall,
