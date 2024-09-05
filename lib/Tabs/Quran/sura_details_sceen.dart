@@ -14,13 +14,11 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   late SuraDetails arguments;
   List<String> ayat = [];
 
-  @override
+  //@override
   void initState() {
     super.initState();
     // Load the Sura file when the screen is initialized
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      loadSuraFile();
-    });
+    loadSuraFile();
   }
 
   @override
@@ -86,10 +84,15 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                           ),
                         ):
                         ListView.builder(
-                            itemBuilder: (context, index) => Text(
-                                '${ayat[index]} ( ${index+1} )',
-                                style: Theme.of(context).textTheme.titleLarge,
-                                textAlign: TextAlign.center),
+                            itemBuilder: (context, index) => Container(
+                              child: Container(
+                               margin: EdgeInsets.fromLTRB(3, 5, 3, 5),
+                                child: Text(
+                                    '${ayat[index]} ( ${index+1} )',
+                                    style: Theme.of(context).textTheme.titleLarge,
+                                    textAlign: TextAlign.center),
+                              ),
+                            ),
                             itemCount: ayat.length))
                   ],
                 ),
@@ -106,5 +109,4 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     ayat=sura.split('\r\n').where((element) => element.trim().isNotEmpty,).toList();
     setState(() {});
   }
-
 }
