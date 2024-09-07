@@ -20,8 +20,8 @@ class HadithTab extends StatelessWidget {
           Container(
             decoration: BoxDecoration(border:
             Border(
-                bottom: BorderSide(color: AppTheme.lightPrimary,width: 3),
-                top:BorderSide(color: AppTheme.lightPrimary,width: 3)
+                bottom: BorderSide(   color:Theme.of(context).cardColor,width: 3),
+                top:BorderSide(   color:Theme.of(context).cardColor,width: 3)
             )
             ),
             width: double.infinity,
@@ -30,7 +30,7 @@ class HadithTab extends StatelessWidget {
                 MediaQuery.of(context).size.height*0.017 ),
             child: Column(mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('الأحاديث',textAlign: TextAlign.center,style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                Text('الأحاديث',textAlign: TextAlign.center,style:Theme.of(context).textTheme.headlineSmall,),
               ],
             ),
           ),

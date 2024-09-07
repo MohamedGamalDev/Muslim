@@ -33,13 +33,12 @@ class _SebhaTabState extends State<SebhaTab> {
      body: Column(crossAxisAlignment: CrossAxisAlignment.stretch,
        mainAxisAlignment: MainAxisAlignment.start,
        children: [
-         SizedBox(height: 20,),
-          Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(200)),),
-            margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*.115, MediaQuery.of(context).size.height*0.048, MediaQuery.of(context).size.width*.115, MediaQuery.of(context).size.height*0),
-            child: InkWell(
+         Container(
+            margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*.115, MediaQuery.of(context).size.height*0, MediaQuery.of(context).size.width*.115, MediaQuery.of(context).size.height*0),
+            child: GestureDetector(
               onTap: () =>add(),
-                     child:Image(image: AssetImage('assets/images/completedsepha.png'),
+                child:Image(
+                       image: AssetImage('assets/images/Csepha.png'), color:Theme.of(context).cardColor,
                      )
             ),
           ),
@@ -49,7 +48,7 @@ class _SebhaTabState extends State<SebhaTab> {
          margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*0.43 ,MediaQuery.of(context).size.width*0.08, MediaQuery.of(context).size.width*0.43 ,0 ),
            decoration: BoxDecoration(borderRadius:BorderRadius.all(Radius.circular(25)
            ),
-             color: AppTheme.lightPrimary.withOpacity(.7)
+             color:Theme.of(context).primaryColor,
            ),
            child:Column(mainAxisAlignment: MainAxisAlignment.center,
              children: [
@@ -58,20 +57,20 @@ class _SebhaTabState extends State<SebhaTab> {
            ) ,
          )
          ,Container(
-           decoration: BoxDecoration( color: AppTheme.lightPrimary,
+           decoration: BoxDecoration( color:Theme.of(context).cardColor,
                borderRadius: BorderRadius.all(Radius.circular(25),
                )
            ),
            margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*0.33 ,MediaQuery.of(context).size.width*0.04, MediaQuery.of(context).size.width*0.33,0 ),
-           child: Text('${Sebha[numberOfList]}',style:TextStyle(color:AppTheme.white,fontSize: 25 ),textAlign: TextAlign.center,),
+           child: Text('${Sebha[numberOfList]}',style:Theme.of(context).textTheme.bodyLarge,textAlign: TextAlign.center,),
          ),
          Container(
-           decoration: BoxDecoration( color: AppTheme.lightPrimary,
+           decoration: BoxDecoration( color:Theme.of(context).cardColor,
                borderRadius: BorderRadius.all(Radius.circular(25),
                )
            ),
            margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*0.25 ,MediaQuery.of(context).size.width*0.04, MediaQuery.of(context).size.width*0.25,0 ),
-           child: Text('${numberOfCompletedRound} : تسبيحة كاملة',style:TextStyle(color:AppTheme.white,fontSize: 25),textAlign: TextAlign.center,),
+           child: Text('${numberOfCompletedRound} : تسبيحة كاملة',style:Theme.of(context).textTheme.bodyLarge,textAlign: TextAlign.center,),
          )
        ],
      ),

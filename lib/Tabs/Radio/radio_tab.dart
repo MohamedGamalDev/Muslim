@@ -105,15 +105,15 @@ class _RadioTabState extends State<RadioTab> {
                 // زر لتشغيل الراديو
                 ElevatedButton(
                   onPressed: _playRadio,
-                  style: ElevatedButton.styleFrom(backgroundColor: AppTheme.lightPrimary),
-                  child: Text('تشغيل الراديو', style: Theme.of(context).textTheme.titleLarge,),
+                  style: ElevatedButton.styleFrom(backgroundColor:Theme.of(context).cardColor,),
+                  child: Text('تشغيل الراديو', style: Theme.of(context).textTheme.bodyLarge,),
                 ),
                 SizedBox(height: 20),
                 // زر لإيقاف الراديو
                 ElevatedButton(
                   onPressed: _stopRadio,
-                  style: ElevatedButton.styleFrom(backgroundColor: AppTheme.lightPrimary),
-                  child: Text('إيقاف الراديو', style: Theme.of(context).textTheme.titleLarge,),
+                  style: ElevatedButton.styleFrom(backgroundColor:Theme.of(context).cardColor),
+                  child: Text('إيقاف الراديو', style: Theme.of(context).textTheme.bodyLarge,),
                 ),
                 SizedBox(height: 20),
                 // عناصر التحكم في مستوى الصوت

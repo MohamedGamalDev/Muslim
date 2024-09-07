@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:test1907/Tabs/Hadith/hadith_tab.dart';
 import 'package:test1907/Tabs/Quran/quran_tab.dart';
 import 'package:test1907/Tabs/Radio/radio_tab.dart';
 import 'package:test1907/Tabs/Sabha/sebha_tab.dart';
+import 'package:test1907/Tabs/Settings/settings_provider.dart';
 import 'package:test1907/Tabs/Settings/settings_tab.dart';
 import 'package:test1907/app_theme.dart';
 class HomePage extends StatefulWidget {
@@ -21,8 +23,10 @@ class _HomePageState extends State<HomePage> {
   int number=0;
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider=Provider.of<SettingsProvider>(context);
     return Container(
-      decoration:BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/default_bg.png')
+      decoration:BoxDecoration(image: DecorationImage(image:
+      AssetImage(settingsProvider.backGroundImagePAth)
       ,fit: BoxFit.fill)
       ),
       child: Scaffold(

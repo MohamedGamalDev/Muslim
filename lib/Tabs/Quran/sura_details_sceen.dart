@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:test1907/Tabs/Quran/quran_tab.dart';
+import 'package:test1907/Tabs/Settings/settings_provider.dart';
 import 'package:test1907/app_theme.dart';
-
+import 'package:provider/provider.dart';
 class SuraDetailsScreen extends StatefulWidget {
   static const String route = 'SuraDetailsScreen';
 
@@ -23,11 +24,12 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider=Provider.of<SettingsProvider>(context);
     arguments = ModalRoute.of(context)!.settings.arguments as SuraDetails;
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/default_bg.png'),
+              image: AssetImage(settingsProvider.backGroundImagePAth),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
@@ -44,7 +46,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                 width: MediaQuery.of(context).size.width * 0.86,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(25)),
-                  color: AppTheme.white,
+                  color:Theme.of(context).canvasColor,
                 ),
                 child: Column(
                   children: [
@@ -56,7 +58,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                       decoration: BoxDecoration(
                           border: Border(
                               bottom: BorderSide(
-                                color: AppTheme.lightPrimary,
+                                color: Theme.of(context).primaryColor,
                                 width: 1,
                               ))),
                       child: Row(
@@ -66,11 +68,11 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                             padding: const EdgeInsets.fromLTRB(70, 0, 0, 0),
                             child: Text(
                               ' سورة ${arguments.curruntName}',
-                              style: Theme.of(context).textTheme.headlineSmall,
+                              style: Theme.of(context).textTheme.titleLarge,
                               textAlign: TextAlign.center,
                             ),
                           ),
-                          Icon(Icons.play_circle_fill_outlined),
+                          Icon(Icons.play_circle_fill_outlined,color: Theme.of(context).cardColor,),
                         ],
                       ),
                     ),
@@ -78,11 +80,12 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                       height: MediaQuery.of(context).size.height * 0.02816,
                     ),
                     Expanded(
-                        child: ayat.isEmpty? Center(
-                          child: CircularProgressIndicator(
-                            color: AppTheme.gold,
-                          ),
-                        ):
+                        child:
+                        // ayat.isEmpty? Center(
+                        //   child: CircularProgressIndicator(
+                        //     color: AppTheme.gold,
+                        //   ),
+                        // ):
                         ListView.builder(
                             itemBuilder: (context, index) => Container(
                               child: Container(
@@ -103,8 +106,8 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
       ),
     );
   }
-  void loadSuraFile() async {
-    await Future.delayed(Duration(seconds: 1));
+  Future<void> loadSuraFile() async {
+   await Future.delayed(Duration(seconds: 1));
     String sura = await rootBundle.loadString('assets/files/${arguments.currintIndex + 1}.txt');
     ayat=sura.split('\r\n').where((element) => element.trim().isNotEmpty,).toList();
     setState(() {});

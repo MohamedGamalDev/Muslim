@@ -253,15 +253,15 @@ class QuranTab extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                      color: AppTheme.lightPrimary,
+                      color:Theme.of(context).cardColor,
                       width: 3,
                     ),
                     top: BorderSide(
-                      color: AppTheme.lightPrimary,
+                      color:Theme.of(context).cardColor,
                       width: 3,
                     ),
                     right: BorderSide(
-                      color: AppTheme.lightPrimary,
+                      color:Theme.of(context).cardColor,
                       width: 3,
                     ),
                   ),
@@ -279,11 +279,11 @@ class QuranTab extends StatelessWidget {
                   border: Border(
                     left: BorderSide.none,
                     bottom: BorderSide(
-                      color: AppTheme.lightPrimary,
+                      color:Theme.of(context).cardColor,
                       width: 3,
                     ),
                     top: BorderSide(
-                      color: AppTheme.lightPrimary,
+                      color:Theme.of(context).cardColor,
                       width: 3,
                     ),
                   ),
@@ -309,7 +309,7 @@ class QuranTab extends StatelessWidget {
                       decoration: BoxDecoration(
                         border: Border(
                           right: BorderSide(
-                            color: AppTheme.lightPrimary,
+                            color:Theme.of(context).cardColor,
                             width: 3,
                           ),
                         ),
