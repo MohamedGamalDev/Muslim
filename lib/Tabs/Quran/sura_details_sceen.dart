@@ -4,6 +4,7 @@ import 'package:test1907/Tabs/Quran/quran_tab.dart';
 import 'package:test1907/Tabs/Settings/settings_provider.dart';
 import 'package:test1907/app_theme.dart';
 import 'package:provider/provider.dart';
+
 class SuraDetailsScreen extends StatefulWidget {
   static const String route = 'SuraDetailsScreen';
 
