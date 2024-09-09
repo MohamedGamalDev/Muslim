@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:test1907/Tabs/Hadith/hadith_details_screen.dart';
-import 'package:test1907/app_theme.dart';
 class HadithTab extends StatelessWidget {
   List<int> NumburOfHadeth = List.generate(50, (index) => (index+ 1));
   @override

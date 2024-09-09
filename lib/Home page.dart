@@ -6,7 +6,6 @@ import 'package:test1907/Tabs/Radio/radio_tab.dart';
 import 'package:test1907/Tabs/Sabha/sebha_tab.dart';
 import 'package:test1907/Tabs/Settings/settings_provider.dart';
 import 'package:test1907/Tabs/Settings/settings_tab.dart';
-import 'package:test1907/app_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomePage extends StatefulWidget {
   static const String route='/';

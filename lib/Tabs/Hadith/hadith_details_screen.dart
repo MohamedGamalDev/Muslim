@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:test1907/Tabs/Settings/settings_provider.dart';
-import 'package:test1907/app_theme.dart';
 import 'hadith_tab.dart';
 import 'package:provider/provider.dart';
 
@@ -106,7 +105,6 @@ class _HadithDetailsScreenState extends State<HadithDetailsScreen> {
   }
   Future<void> readFile()async
   {
-   // await Future.delayed(Duration(seconds: 1));
     String AllTextOfFillAhadeth =await rootBundle.loadString('assets/files/ahadeth.txt');
     List<String>AllPartsOfFillAhadeth=AllTextOfFillAhadeth.split('#').where((element) => element.trim().isNotEmpty).toList();
     for(int i =0;i<AllPartsOfFillAhadeth.length;i++)

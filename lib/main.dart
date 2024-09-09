@@ -5,16 +5,13 @@ import 'package:test1907/Tabs/Quran/sura_details_sceen.dart';
 import 'package:test1907/Tabs/Settings/settings_provider.dart';
 import 'package:test1907/app_theme.dart';
 import 'Home page.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();  // تهيئة الفلاتر قبل أي عمليات غير متزامنة
+  WidgetsFlutterBinding.ensureInitialized();
 
-  // إنشاء الـ SettingsProvider وتحميل التفضيلات قبل تشغيل التطبيق
   SettingsProvider settingsProvider = SettingsProvider();
-  await settingsProvider.loadPreferences();  // تحميل القيم من SharedPreferences
+  await settingsProvider.loadPreferences();
 
   runApp(
     ChangeNotifierProvider(
@@ -40,7 +37,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       themeMode: settingsProvider.themeMode,
       darkTheme: AppTheme.darkTheme,
-      locale: Locale(settingsProvider.language),  // تعيين اللغة بناءً على التفضيلات المحفوظة
+      locale: Locale(settingsProvider.language),
     );
   }
 }
